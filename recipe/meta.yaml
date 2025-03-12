@@ -10,7 +10,6 @@ source:
   sha256: 0f9944496d1143935e9c996bc6233ca0dd5451299def33ef400a409942f8f34b
   patches:
     - 0001-Add-CMake-support.patch
-    - 0002-Fix-static_assert-compiler-support.patch
 
 build:
   number: 0
