@@ -1,5 +1,5 @@
 {% set name = "tinycbor" %}
-{% set version = "0.6.0" %}
+{% set version = "0.6.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/intel/tinycbor/archive/v{{ version }}.tar.gz
-  sha256: 512e2c9fce74f60ef9ed3af59161e905f9e19f30a52e433fc55f39f4c70d27e4
+  sha256: 0f9944496d1143935e9c996bc6233ca0dd5451299def33ef400a409942f8f34b
   patches:
     - 0001-Add-CMake-support.patch
     - 0002-Fix-static_assert-compiler-support.patch
