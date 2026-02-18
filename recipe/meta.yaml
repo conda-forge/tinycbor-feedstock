@@ -1,5 +1,5 @@
 {% set name = "tinycbor" %}
-{% set version = "0.6.1" %}
+{% set version = "7.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/intel/tinycbor/archive/v{{ version }}.tar.gz
-  sha256: 0f9944496d1143935e9c996bc6233ca0dd5451299def33ef400a409942f8f34b
+  sha256: 8b1b76001b9f987677f2ea7aa814fba1f810ff6cbbffa62ea3bac612c55b1a56
   patches:
     - 0001-Add-CMake-support.patch
 
