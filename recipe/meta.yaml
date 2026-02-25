@@ -8,8 +8,6 @@ package:
 source:
   url: https://github.com/intel/tinycbor/archive/v{{ version }}.tar.gz
   sha256: 8b1b76001b9f987677f2ea7aa814fba1f810ff6cbbffa62ea3bac612c55b1a56
-  patches:
-    - 0001-Add-CMake-support.patch
 
 build:
   number: 0
