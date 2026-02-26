@@ -25,13 +25,13 @@ requirements:
 test:
   commands:
     - test -f ${PREFIX}/lib/libtinycbor${SHLIB_EXT}                # [unix]
-    - test -f ${PREFIX}/lib/cmake/tinycbor/tinycbor-targets.cmake  # [unix]
+    - test -f ${PREFIX}/lib/cmake/tinycbor/TinyCBOR-targets.cmake  # [unix]
     - test -f ${PREFIX}/include/cbor.h                             # [unix]
     - test -f ${PREFIX}/include/tinycbor-version.h                 # [unix]
     - test -f ${PREFIX}/include/tinycbor-export.h                  # [unix]
     - if not exist %LIBRARY_BIN%\tinycbor.dll exit 1                           # [win]
     - if not exist %LIBRARY_LIB%\tinycbor.lib exit 1                           # [win]
-    - if not exist %LIBRARY_LIB%\cmake\tinycbor\tinycbor-targets.cmake exit 1  # [win]
+    - if not exist %LIBRARY_LIB%\cmake\tinycbor\TinyCBOR-targets.cmake exit 1  # [win]
     - if not exist %LIBRARY_INC%\cbor.h exit 1                                 # [win]
     - if not exist %LIBRARY_INC%\tinycbor-version.h exit 1                     # [win]
     - if not exist %LIBRARY_INC%\tinycbor-export.h exit 1                      # [win]
