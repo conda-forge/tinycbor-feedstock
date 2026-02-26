@@ -1,5 +1,5 @@
 {% set name = "tinycbor" %}
-{% set version = "0.6.1" %}
+{% set version = "7.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,9 +7,7 @@ package:
 
 source:
   url: https://github.com/intel/tinycbor/archive/v{{ version }}.tar.gz
-  sha256: 0f9944496d1143935e9c996bc6233ca0dd5451299def33ef400a409942f8f34b
-  patches:
-    - 0001-Add-CMake-support.patch
+  sha256: 8b1b76001b9f987677f2ea7aa814fba1f810ff6cbbffa62ea3bac612c55b1a56
 
 build:
   number: 0
@@ -20,22 +18,24 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
+    - {{ compiler('cxx') }}
     - cmake
     - ninja
 
 test:
   commands:
     - test -f ${PREFIX}/lib/libtinycbor${SHLIB_EXT}                # [unix]
-    - test -f ${PREFIX}/lib/cmake/tinycbor/tinycbor-targets.cmake  # [unix]
-    - test -f ${PREFIX}/include/cbor.h                             # [unix]
-    - test -f ${PREFIX}/include/tinycbor-version.h                 # [unix]
-    - test -f ${PREFIX}/include/tinycbor-export.h                  # [unix]
+    - test -f ${PREFIX}/lib/cmake/tinycbor/TinyCBOR-targets.cmake  # [unix]
+    - test -f ${PREFIX}/include/tinycbor/cbor.h                    # [unix]
+    - test -f ${PREFIX}/include/tinycbor/tinycbor-version.h        # [unix]
+    - test -f ${PREFIX}/include/tinycbor/tinycbor-export.h         # [unix]
+    - test -f ${PREFIX}/bin/cbordump                               # [unix]
     - if not exist %LIBRARY_BIN%\tinycbor.dll exit 1                           # [win]
     - if not exist %LIBRARY_LIB%\tinycbor.lib exit 1                           # [win]
-    - if not exist %LIBRARY_LIB%\cmake\tinycbor\tinycbor-targets.cmake exit 1  # [win]
-    - if not exist %LIBRARY_INC%\cbor.h exit 1                                 # [win]
-    - if not exist %LIBRARY_INC%\tinycbor-version.h exit 1                     # [win]
-    - if not exist %LIBRARY_INC%\tinycbor-export.h exit 1                      # [win]
+    - if not exist %LIBRARY_LIB%\cmake\tinycbor\TinyCBOR-targets.cmake exit 1  # [win]
+    - if not exist %LIBRARY_INC%\tinycbor\cbor.h exit 1                        # [win]
+    - if not exist %LIBRARY_INC%\tinycbor\tinycbor-version.h exit 1            # [win]
+    - if not exist %LIBRARY_INC%\tinycbor\tinycbor-export.h exit 1             # [win]
 
 about:
   home: https://github.com/intel/tinycbor
