@@ -16,7 +16,6 @@ Documentation: https://intel.github.io/tinycbor/current/
 The TinyCBOR library is a small CBOR encoder and decoder library, optimized for very fast
 operation with very small footprint. The main encoder and decoder functions do not allocate memory.
 
-
 Current build status
 ====================
 
